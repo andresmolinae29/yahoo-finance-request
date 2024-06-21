@@ -52,6 +52,9 @@ def main():
         except Exception:
             logger.error("Error desconocido", exc_info=True)
 
+        
+    db.close()
+
 
 if __name__ == "__main__":
     main()
