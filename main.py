@@ -38,13 +38,11 @@ def main():
                     logger.info("La info ya esta en la base de datos")
                     continue
 
-            else:
-
-                HistoryStocksServices(db).create_value(value = HistoryStock(
-                    accion_id = stock.id,
-                    fecha = market_time,
-                    precio = close
-                ))
+            HistoryStocksServices(db).create_value(value = HistoryStock(
+                accion_id = stock.id,
+                fecha = market_time,
+                precio = close
+            ))
 
         except (TypeError, ):
             logger.info(f"No se encuentra la accion: {stock}")
